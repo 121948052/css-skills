@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义滚动条样式</title>
+  <style>
+    h3 {
+      text-align: center;
+    }
+    .box {
+      width: 200px;
+      height: 160px;
+      margin: 0 auto;
+      border: 1px solid #DDD;
+    }
+    /*移动端常用样式*/
+    .mobile, .pc, .corner{
+      overflow-y: scroll;
+    }    
+    .mobile::-webkit-scrollbar {
+      width: 10px;
+    }    
+    .mobile::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: #eee;
+    }    
+    .mobile::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #3DB6FF;
+    }
+	
+    /*PC端常用样式*/
+    .pc::-webkit-scrollbar {
+      width: 12px;
+      background-color: #eee;
+    }    
+    .pc::-webkit-scrollbar-track {
+      background-color: #eee;
+    }    
+    .pc::-webkit-scrollbar-thumb {
+      background: #3DB6FF;
+    }    
+    .pc::-webkit-scrollbar-button:start {
+      background: url(./imgs/up.png) no-repeat;
+      background-size: 18px 18px;
+	  background-position: center;
+    }    
+    .pc::-webkit-scrollbar-button:end {
+      background: url(./imgs/down.png) no-repeat;
+      background-size: 18px 18px;
+	  background-position: center;
+    }
+	
+    /*自定义交汇处*/
+    .corner {
+      overflow: scroll;
+    }
+    
+    .corner::-webkit-scrollbar {
+      width: 18px;/*为垂直滚动条的宽度*/
+      height: 18px;/*为水平滚动条的高度*/
+    }    
+    .corner::-webkit-scrollbar-track {
+      background-color: #eee;
+    }    
+    .corner::-webkit-scrollbar-thumb {
+      background: #3DB6FF;
+    }
+    .corner::-webkit-scrollbar-corner {
+      background: url(./imgs/corner.png) no-repeat;
+      background-size: 18px 18px;
+	  background-position: center;
+    }    
+    .corner::-webkit-scrollbar-thumb {
+	  //注意颜色必须写在background-image上面才有彩条效果
+      background: #3DB6FF;
+	  /*.5用于调整斜杠较浅部分的颜色透明度, 45deg用于调整水平线和渐变线之间的角度*/
+      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .5) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, .5) 75%, transparent 75%, transparent);
+    }
+  </style>
+</head>
+
+<body>
+    <h3>PC端常用样式</h3>
+	<div class="box pc">
+		<p>CSS 指层叠样式表 (Cascading Style Sheets)
+        样式定义如何显示 HTML 元素
+        样式通常存储在样式表中
+        把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题
+        外部样式表可以极大提高工作效率
+        外部样式表通常存储在 CSS 文件中
+        多个样式定义可层叠为一
+		</p>
+	</div>
+    <h3>移动端常用样式</h3>
+	<div class="box mobile">
+		<p>CSS 指层叠样式表 (Cascading Style Sheets)
+        样式定义如何显示 HTML 元素
+        样式通常存储在样式表中
+        把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题
+        外部样式表可以极大提高工作效率
+        外部样式表通常存储在 CSS 文件中
+        多个样式定义可层叠为一
+		</p>
+	</div>
+    <h3>垂直滚动条和水平滚动条相交处corner样式</h3>
+	<div class="box corner">
+		<p>CSS 指层叠样式表 (Cascading Style Sheets)
+        样式定义如何显示 HTML 元素
+        样式通常存储在样式表中
+        把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题
+        外部样式表可以极大提高工作效率
+        外部样式表通常存储在 CSS 文件中
+        多个样式定义可层叠为一
+		</p>
+	</div>
+</body>
+
+</html>
